@@ -1,0 +1,14 @@
+.app-container {
+  font-size: 3em;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
+}
+
+.app-container {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}

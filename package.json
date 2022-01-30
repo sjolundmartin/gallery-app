@@ -1,0 +1,24 @@
+{
+  "name": "gallery-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjolundmartin/gallery-app.git"
+  },
+  "author": "Martin Sjölund",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sjolundmartin/gallery-app/issues"
+  },
+  "homepage": "https://github.com/sjolundmartin/gallery-app#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "node-fetch": "^3.2.0"
+  }
+}
