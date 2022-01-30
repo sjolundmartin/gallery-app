@@ -1,6 +1,9 @@
-const express = require("express");
-const path = require("path");
-const { engine } = require("express-handlebars");
+import express from "express";
+import path from "path";
+import { engine } from "express-handlebars";
+import fetch from "node-fetch";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 // Init app
 const app = express();
@@ -11,6 +14,8 @@ app.set("view engine", "handlebars");
 app.set("views", "./views");
 
 // Set public folder
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 app.use(express.static(path.join(__dirname, "public")));
 
 // Homepage
