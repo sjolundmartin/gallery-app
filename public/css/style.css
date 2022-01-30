@@ -1,14 +1,30 @@
-.app-container {
+body {
   font-size: 3em;
   font-family: "Nunito", sans-serif;
   font-weight: 100;
-}
-
-.app-container {
-  width: 100%;
+  margin: auto 0;
 }
 
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 100%;
+  max-width: 100%;
+}
+
+.column img {
+  margin-top: 4px;
+  vertical-align: middle;
+  width: 100%;
 }
