@@ -1,12 +1,16 @@
-<div class="header">
+<div class="container">
   <h1>{{title}}</h1>
 
   <div class="row">
 
     <div class="column">
       {{#each photos}}
-
-        <img src="{{this}}" />
+        <div style="position: relative">
+          <div class="img-description">
+            <p>{{this.title}}</p>
+          </div>
+          <img src="{{this.url}}" />
+        </div>
 
       {{/each}}
     </div>

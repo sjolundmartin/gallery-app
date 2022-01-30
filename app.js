@@ -20,9 +20,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Homepage
 app.get("/", (req, res) => {
-  let photoUrls = [];
-  getPhotos().then((urls) => {
-    res.render("home", { title: "Gallery App", photos: urls });
+  getPhotos().then((photos) => {
+    res.render("home", { title: "Gallery App", photos: photos });
   });
 });
 
