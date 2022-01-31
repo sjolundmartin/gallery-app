@@ -1,8 +1,8 @@
 import fetch from "node-fetch";
 
-const api_key = "2a8cf44357a719b5c5a67ef8134cb474";
+const api_key = "af7a9fd7141689c02b6bee9975865352";
 const tags = "aurora, borealis";
-const per_page = "5";
+const per_page = "10";
 const sort = "interestingness-desc";
 
 let photos = [];
@@ -16,10 +16,12 @@ export const getPhotos = async () => {
       .then((response) => response.json())
       .then((data) => {
         data.photos.photo.forEach((photo) => {
-          photos.push({
-            url: getPhoto(photo),
-            title: photo.title,
-          });
+          if (photo.title) {
+            photos.push({
+              url: getPhotoURL(photo),
+              title: photo.title,
+            });
+          }
         });
         resolve(photos);
       })
@@ -46,8 +48,12 @@ export const getUser = async (photo) => {
 };
 
 //Create image url from photo api
-export const getPhoto = (photo) => {
+export const getPhotoURL = (photo) => {
   return `https://live.staticflickr.com/${photo.server}/${photo.id}_${
     photo.secret
   }_${"b"}.jpg`;
+};
+
+export const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 };
