@@ -15,6 +15,7 @@ export const getPhotos = async () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        photos = [];
         data.photos.photo.forEach((photo) => {
           if (photo.title) {
             photos.push({

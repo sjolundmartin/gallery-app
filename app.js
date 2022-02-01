@@ -3,7 +3,10 @@ import path from "path";
 import { engine } from "express-handlebars";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { getPhotos, getPhoto } from "./imageApi.js";
+import { getPhotos, sleep } from "./imageApi.js";
+
+//State
+var photos = [];
 
 // Init app
 const app = express();
@@ -21,12 +24,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // Homepage
 app.get("/", (req, res) => {
   getPhotos().then((photos) => {
-    res.render("home", { title: "Gallery App", photos: photos });
+    res.render("home", { title: "Aurora HuntR", photos: photos });
   });
-});
-
-app.get("/about", (req, res) => {
-  res.render("about", { header: "About" });
 });
 
 // Start server
