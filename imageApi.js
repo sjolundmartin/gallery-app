@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 
 const api_key = "af7a9fd7141689c02b6bee9975865352";
 const tags = "aurora, borealis";
-const per_page = "10";
+const per_page = "20";
 const sort = "interestingness-desc";
 
 let photos = [];
