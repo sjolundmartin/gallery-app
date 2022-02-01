@@ -3,10 +3,7 @@ import path from "path";
 import { engine } from "express-handlebars";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { getPhotos, sleep } from "./imageApi.js";
-
-//State
-var photos = [];
+import { getPhotos } from "./imageApi.js";
 
 // Init app
 const app = express();
